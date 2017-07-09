@@ -1,6 +1,6 @@
 # React Chord Diagram
 
-An accessible React component for building[D3 Chord Diagrams](https://github.com/d3/d3-chord)
+An accessible React component for building [D3 Chord Diagrams](https://github.com/d3/d3-chord)
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
@@ -9,9 +9,9 @@ An accessible React component for building[D3 Chord Diagrams](https://github.com
 ## Table of Contents
 
 * [Installation](#installation)
-* [Usage](#Usage)
-* [Required Props](#Required Props)
-* [Optional Props](#Optional Props)
+* [Usage](#usage)
+* [Required Props](#required-props)
+* [Optional Props](#optional-props)
 
 ## Installation
 
@@ -31,7 +31,7 @@ An accessible React component for building[D3 Chord Diagrams](https://github.com
 
 - type: `array of arrays`
 
-The directed graph (matrix) to be visualized. See[D3 Chord](https://github.com/d3/d3-chord#chord).
+The directed graph (matrix) to be visualized. See [D3 Chord](https://github.com/d3/d3-chord#chord).
 
 example:
 
@@ -110,7 +110,7 @@ default: .05
 
 - type: `function`
 
-A function that specifies how the groups should be sorted. See[chord.sortGroups](https://github.com/d3/d3-chord#chord_sortGroups)
+A function that specifies how the groups should be sorted. See [chord.sortGroups](https://github.com/d3/d3-chord#chord_sortGroups).
 
 default: null
 
@@ -118,7 +118,7 @@ default: null
 
 - type: `function`
 
-A function that specifies how subgroups should be sorted. See[chord.sortSubGroups](https://github.com/d3/d3-chord#chord_sortSubgroups)
+A function that specifies how subgroups should be sorted. See [chord.sortSubGroups](https://github.com/d3/d3-chord#chord_sortSubgroups).
 
 default: d3.descending
 
@@ -126,7 +126,7 @@ default: d3.descending
 
 - type: `function`
 
-A function that specifies how chords should be sorted. See[chord.sortChords](https://github.com/d3/d3-chord#chord_sortChords)
+A function that specifies how chords should be sorted. See [chord.sortChords](https://github.com/d3/d3-chord#chord_sortChords).
 
 default: d3.descending
 
@@ -134,7 +134,7 @@ default: d3.descending
 
 - type: `array`
 
-The color of each label in the diagram
+The color of each label in the diagram.
 
 default: #000000
 
@@ -142,7 +142,7 @@ default: #000000
 
 - type: `boolean`
 
-Whether to hide other ribbons while mousing over a particular group
+Whether to hide other ribbons while mousing over a particular group.
 
 default: false
 
@@ -150,7 +150,7 @@ default: false
 
 - type: `boolean`
 
-Display tick marks or not
+Display tick marks or not.
 
 default: true
 
