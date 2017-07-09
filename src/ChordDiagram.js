@@ -19,16 +19,16 @@ export default class ChordDiagram extends Component {
         style: PropTypes.object,
         outerRadius: PropTypes.number,
         innerRadius: PropTypes.number,
+        groupLabels: PropTypes.array,
         groupColors: PropTypes.array,
         formatValue: PropTypes.func,
         padAngle: PropTypes.number,
         sortGroups: PropTypes.func,
         sortSubgroups: PropTypes.func,
         sortChords: PropTypes.func,
-        labels: PropTypes.array,
         labelColors: PropTypes.array,
         disableHover: PropTypes.bool,
-        hideTicks: PropTypes.bool
+        hideTicks: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -40,16 +40,16 @@ export default class ChordDiagram extends Component {
         },
         outerRadius: null,
         innerRadius: null,
+        groupLabels: [],
         groupColors: [],
         formatValue: formatPrefix(",.0", 1e3),
         padAngle: 0.05,
         sortGroups: null,
         sortSubgroups: descending,
         sortChords: null,
-        labels: [],
         labelColors: [],
         disableHover: false,
-        hideTicks: false
+        hideTicks: false,
     };
 
     constructor (props) {
@@ -75,16 +75,16 @@ export default class ChordDiagram extends Component {
           width,
           height,
           style,
+          groupLabels,
           groupColors,
           formatValue,
           padAngle,
           sortGroups,
           sortSubgroups,
           sortChords,
-          labels,
           labelColors,
           disableHover,
-          hideTicks
+          hideTicks,
       } = this.props;
 
       const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -118,7 +118,7 @@ export default class ChordDiagram extends Component {
                 outerRadius={outerRadius}
                 formatValue={formatValue}
                 setMouseOverGroup={this.setMouseOverGroup}
-                labels={labels}
+                groupLabels={groupLabels}
                 labelColors={labelColors}
                 disableHover={disableHover}
                 hideTicks={hideTicks}

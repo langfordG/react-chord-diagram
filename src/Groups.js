@@ -13,7 +13,7 @@ const Groups = ({
     outerRadius,
     formatValue,
     setMouseOverGroup,
-    labels,
+    groupLabels,
     labelColors,
     disableHover,
     hideTicks
@@ -33,7 +33,7 @@ const Groups = ({
 
                 <text x="6" dy="15" fill={labelColors[groupIndex] || '#000000'}>
                     <textPath href={`#group${groupIndex}`}>
-                        {labels[groupIndex]}
+                        {groupLabels[groupIndex]}
                     </textPath>
                 </text>
 
@@ -57,7 +57,7 @@ Groups.propTypes = {
     outerRadius: PropTypes.number,
     formatValue: PropTypes.func,
     setMouseOverGroup: PropTypes.func.isRequired,
-    labels: PropTypes.array,
+    groupLabels: PropTypes.array,
     labelColors: PropTypes.array,
     disableHover: PropTypes.bool,
     hideTicks: PropTypes.bool
