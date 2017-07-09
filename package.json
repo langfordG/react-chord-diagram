@@ -27,11 +27,11 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
-  "author": "",
+  "author": "Grayson Langford",
   "homepage": "",
   "license": "MIT",
   "repository": "",
   "keywords": [
-    "react-component"
+    "react", "chord-diagram", "d3", "react-component"
   ]
 }
