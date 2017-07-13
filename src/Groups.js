@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { rgb } from 'd3-color';
 
-import GroupTicks from './GroupTicks';
-
-import { groupTicks } from './utils/utils';
-
 const Groups = ({
     chords,
     color,
@@ -16,7 +12,6 @@ const Groups = ({
     groupLabels,
     labelColors,
     disableHover,
-    hideTicks
 }) => (
     <g className="groups">
         {chords.groups.map((group, groupIndex) => (
@@ -36,15 +31,6 @@ const Groups = ({
                         {groupLabels[groupIndex]}
                     </textPath>
                 </text>
-
-                {!hideTicks ? groupTicks(group, 1e3).map((tick, tickIndex) => (
-                    <GroupTicks
-                        key={tickIndex}
-                        tick={tick}
-                        tickIndex={tickIndex}
-                        formatValue={formatValue}
-                        outerRadius={outerRadius}
-                    />)): null}
             </g>
         ))}
     </g>

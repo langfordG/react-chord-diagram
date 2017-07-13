@@ -28,7 +28,6 @@ export default class ChordDiagram extends Component {
         sortChords: PropTypes.func,
         labelColors: PropTypes.array,
         disableHover: PropTypes.bool,
-        hideTicks: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -49,7 +48,6 @@ export default class ChordDiagram extends Component {
         sortChords: null,
         labelColors: [],
         disableHover: false,
-        hideTicks: false,
     };
 
     constructor (props) {
@@ -84,7 +82,6 @@ export default class ChordDiagram extends Component {
           sortChords,
           labelColors,
           disableHover,
-          hideTicks,
       } = this.props;
 
       const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -121,7 +118,6 @@ export default class ChordDiagram extends Component {
                 groupLabels={groupLabels}
                 labelColors={labelColors}
                 disableHover={disableHover}
-                hideTicks={hideTicks}
             />
 
             <Ribbons
