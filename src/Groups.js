@@ -46,7 +46,6 @@ Groups.propTypes = {
     groupLabels: PropTypes.array,
     labelColors: PropTypes.array,
     disableHover: PropTypes.bool,
-    hideTicks: PropTypes.bool
 };
 
 export default Groups;
