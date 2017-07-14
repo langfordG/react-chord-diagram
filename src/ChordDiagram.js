@@ -4,7 +4,6 @@ import { arc } from 'd3-shape';
 import { ribbon, chord } from 'd3-chord';
 import { scaleOrdinal } from 'd3-scale';
 import { range, descending } from 'd3-array';
-import { formatPrefix } from 'd3-format';
 
 import Svg from './Svg';
 import Groups from './Groups';
@@ -21,7 +20,6 @@ export default class ChordDiagram extends Component {
         innerRadius: PropTypes.number,
         groupLabels: PropTypes.array,
         groupColors: PropTypes.array,
-        formatValue: PropTypes.func,
         padAngle: PropTypes.number,
         sortGroups: PropTypes.func,
         sortSubgroups: PropTypes.func,
@@ -41,7 +39,6 @@ export default class ChordDiagram extends Component {
         innerRadius: null,
         groupLabels: [],
         groupColors: [],
-        formatValue: formatPrefix(",.0", 1e3),
         padAngle: 0.05,
         sortGroups: null,
         sortSubgroups: descending,
@@ -75,7 +72,6 @@ export default class ChordDiagram extends Component {
           style,
           groupLabels,
           groupColors,
-          formatValue,
           padAngle,
           sortGroups,
           sortSubgroups,
@@ -113,7 +109,6 @@ export default class ChordDiagram extends Component {
                 color={color}
                 arc={d3Arc}
                 outerRadius={outerRadius}
-                formatValue={formatValue}
                 setMouseOverGroup={this.setMouseOverGroup}
                 groupLabels={groupLabels}
                 labelColors={labelColors}
