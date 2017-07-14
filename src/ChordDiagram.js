@@ -43,7 +43,7 @@ export default class ChordDiagram extends Component {
         sortGroups: null,
         sortSubgroups: descending,
         sortChords: null,
-        labelColors: [],
+        labelColors: ['#000000'],
         disableHover: false,
     };
 

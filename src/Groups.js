@@ -25,7 +25,7 @@ const Groups = ({
                     stroke={`${rgb(color(groupIndex)).darker()}`} d={arc(group)}
                 />
 
-                <text x="6" dy="15" fill={labelColors[groupIndex] || '#000000'}>
+                <text x="6" dy="15" fill={labelColors.length === 1 ? labelColors[0] : labelColors[groupIndex]}>
                     <textPath href={`#group${groupIndex}`}>
                         {groupLabels[groupIndex]}
                     </textPath>

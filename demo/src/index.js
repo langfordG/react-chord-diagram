@@ -16,7 +16,7 @@ class Demo extends Component {
         matrix={matrix}
         width={700}
         height={700}
-        labels={['black', 'yellow', 'brown', 'orange']}
+        groupLabels={['black', 'yellow', 'brown', 'orange']}
         groupColors={['black', 'yellow', 'brown', 'orange']}
     />
   }
