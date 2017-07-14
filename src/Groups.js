@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { rgb } from 'd3-color';
 
 const Groups = ({
+    componentId,
     chords,
     color,
     arc,
@@ -20,13 +21,13 @@ const Groups = ({
                 onMouseOut={!disableHover ? () => setMouseOverGroup(null) : null}
             >
                 <path
-                    id={`group${groupIndex}`}
+                    id={`component${componentId}-group${groupIndex}`}
                     fill={`${color(groupIndex)}`}
                     stroke={`${rgb(color(groupIndex)).darker()}`} d={arc(group)}
                 />
 
                 <text x="6" dy="15" fill={labelColors.length === 1 ? labelColors[0] : labelColors[groupIndex]}>
-                    <textPath href={`#group${groupIndex}`}>
+                    <textPath href={`#component${componentId}-group${groupIndex}`}>
                         {groupLabels[groupIndex]}
                     </textPath>
                 </text>

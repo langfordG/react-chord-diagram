@@ -14,6 +14,7 @@ class Demo extends Component {
   render() {
     return <ChordDiagram
         matrix={matrix}
+        componentId={1}
         width={700}
         height={700}
         groupLabels={['black', 'yellow', 'brown', 'orange']}

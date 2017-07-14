@@ -13,6 +13,7 @@ export default class ChordDiagram extends Component {
 
     static propTypes = {
         matrix: PropTypes.array.isRequired,
+        componentId: PropTypes.number,
         width: PropTypes.number,
         height: PropTypes.number,
         style: PropTypes.object,
@@ -30,6 +31,7 @@ export default class ChordDiagram extends Component {
 
     static defaultProps = {
         matrix: [],
+        componentId: 1,
         width: 700,
         height: 700,
         style: {
@@ -67,6 +69,7 @@ export default class ChordDiagram extends Component {
 
       const {
           matrix,
+          componentId,
           width,
           height,
           style,
@@ -105,6 +108,7 @@ export default class ChordDiagram extends Component {
     return (
         <Svg width={width} height={height} style={style}>
             <Groups
+                componentId={componentId}
                 chords={chords}
                 color={color}
                 arc={d3Arc}
