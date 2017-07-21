@@ -2,7 +2,7 @@
 
 A React component for building [D3 Chord Diagrams](https://github.com/d3/d3-chord)
 
-https://graysoncl.github.io/react-chord-diagram/
+[Demo]([https://graysoncl.github.io/react-chord-diagram/)
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
