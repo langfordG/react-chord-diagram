@@ -5,9 +5,10 @@ const Svg = ({
     width,
     height,
     style,
+    className,
     children
 }) => (
-    <svg width={width} height={height} style={style}>
+    <svg width={width} height={height} style={style} className={className}>
         <g transform={`translate(${width / 2},${height / 2})`}>
             { children }
         </g>
