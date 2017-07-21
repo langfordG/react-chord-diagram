@@ -1,6 +1,8 @@
 # React Chord Diagram
 
-An accessible React component for building [D3 Chord Diagrams](https://github.com/d3/d3-chord)
+A React component for building [D3 Chord Diagrams](https://github.com/d3/d3-chord)
+
+https://graysoncl.github.io/react-chord-diagram/
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
@@ -22,7 +24,10 @@ An accessible React component for building [D3 Chord Diagrams](https://github.co
     import ChordDiagram from 'react-chord-diagram'
 
 ```xml
-<ChordDiagram matrix={data}/>
+<ChordDiagram 
+  matrix={data} 
+  componentId={1}
+/>
 ```
 
 ## Required Props
@@ -31,7 +36,7 @@ An accessible React component for building [D3 Chord Diagrams](https://github.co
 
 - type: `array of arrays`
 
-The directed graph (matrix) to be visualized. See [D3 Chord](https://github.com/d3/d3-chord#chord).
+The matrix to be visualized. See [D3 Chord](https://github.com/d3/d3-chord#chord).
 
 example:
 
@@ -41,6 +46,12 @@ example:
       [ 8010, 16145, 8090, 8045],
       [ 1013,   990,  940, 6907],
     ]
+    
+### componentId
+
+- type: `number`
+
+A unique id for the component.
 
 ## Optional Props
 
@@ -60,13 +71,19 @@ Height of the diagram.
 
 - type: `object`
 
-Custom style object applied to the root of diagram.
+Custom styles applied to the root of diagram.
 
 example: 
 
         {
             font: '10px sans-serif'
         }
+
+### className
+
+- type: `string`
+
+Custom class name applied to the root of the diagram.
 
 ### outerRadius
 
@@ -90,13 +107,6 @@ example:
 
     ["#000000", "#FFDD89", "#957244", "#F26223"]
     
-### formatValue
-
-- type: `function`
-
-Specifies the [format prefix](https://github.com/d3/d3-format#locale_formatPrefix) for tick marks.
-
-default: d3.formatPrefix(",.0", 1e3)
 
 ### padAngle
 
@@ -145,14 +155,6 @@ default: #000000
 Whether to hide other ribbons while mousing over a particular group.
 
 default: false
-
-### hideTicks
-
-- type: `boolean`
-
-Display tick marks or not.
-
-default: true
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
