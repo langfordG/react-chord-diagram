@@ -13,10 +13,11 @@ export default class ChordDiagram extends Component {
 
     static propTypes = {
         matrix: PropTypes.array.isRequired,
-        componentId: PropTypes.number,
+        componentId: PropTypes.number.isRequired,
         width: PropTypes.number,
         height: PropTypes.number,
         style: PropTypes.object,
+        className: PropTypes.string,
         outerRadius: PropTypes.number,
         innerRadius: PropTypes.number,
         groupLabels: PropTypes.array,
@@ -34,9 +35,8 @@ export default class ChordDiagram extends Component {
         componentId: 1,
         width: 700,
         height: 700,
-        style: {
-            font: '10px sans-serif'
-        },
+        style: {},
+        className: '',
         outerRadius: null,
         innerRadius: null,
         groupLabels: [],
@@ -65,67 +65,73 @@ export default class ChordDiagram extends Component {
         this.setState({mouseOverGroup});
     }
 
-  render() {
+    render() {
 
-      const {
-          matrix,
-          componentId,
-          width,
-          height,
-          style,
-          groupLabels,
-          groupColors,
-          padAngle,
-          sortGroups,
-          sortSubgroups,
-          sortChords,
-          labelColors,
-          disableHover,
-      } = this.props;
+        const {
+            matrix,
+            componentId,
+            width,
+            height,
+            style,
+            className,
+            groupLabels,
+            groupColors,
+            padAngle,
+            sortGroups,
+            sortSubgroups,
+            sortChords,
+            labelColors,
+            disableHover,
+        } = this.props;
 
-      const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
-      const innerRadius = this.props.innerRadius || outerRadius - 30;
+        const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
+        const innerRadius = this.props.innerRadius || outerRadius - 30;
 
-      const d3Chord = chord()
-          .padAngle(padAngle)
-          .sortGroups(sortGroups)
-          .sortSubgroups(sortSubgroups)
-          .sortChords(sortChords);
+        const d3Chord = chord()
+            .padAngle(padAngle)
+            .sortGroups(sortGroups)
+            .sortSubgroups(sortSubgroups)
+            .sortChords(sortChords);
 
-      const chords = d3Chord(matrix);
+        const chords = d3Chord(matrix);
 
-      const d3Arc = arc()
-          .innerRadius(innerRadius)
-          .outerRadius(outerRadius);
+        const d3Arc = arc()
+            .innerRadius(innerRadius)
+            .outerRadius(outerRadius);
 
-      const d3Ribbon = ribbon()
-          .radius(innerRadius);
+        const d3Ribbon = ribbon()
+            .radius(innerRadius);
 
-      const color = scaleOrdinal()
-          .domain(range(groupColors.length))
-          .range(groupColors);
+        const color = scaleOrdinal()
+            .domain(range(groupColors.length))
+            .range(groupColors);
 
-    return (
-        <Svg width={width} height={height} style={style}>
-            <Groups
-                componentId={componentId}
-                chords={chords}
-                color={color}
-                arc={d3Arc}
-                outerRadius={outerRadius}
-                setMouseOverGroup={this.setMouseOverGroup}
-                groupLabels={groupLabels}
-                labelColors={labelColors}
-                disableHover={disableHover}
-            />
+        return (
+            <Svg
+                width={width}
+                height={height}
+                style={style}
+                className={className}
+            >
+                <Groups
+                    componentId={componentId}
+                    chords={chords}
+                    color={color}
+                    arc={d3Arc}
+                    outerRadius={outerRadius}
+                    setMouseOverGroup={this.setMouseOverGroup}
+                    groupLabels={groupLabels}
+                    labelColors={labelColors}
+                    disableHover={disableHover}
+                />
 
-            <Ribbons
-                chords={chords}
-                color={color}
-                ribbon={d3Ribbon}
-                mouseOverGroup={this.state.mouseOverGroup}
-            />
-        </Svg>
-    );
-  }
+                <Ribbons
+                    chords={chords}
+                    color={color}
+                    ribbon={d3Ribbon}
+                    mouseOverGroup={this.state.mouseOverGroup}
+                />
+            </Svg>
+        );
+    }
 }
