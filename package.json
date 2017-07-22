@@ -1,7 +1,7 @@
 {
   "name": "react-chord-diagram",
-  "version": "1.0.0",
-  "description": "react-chord-diagram React component",
+  "version": "1.0.1",
+  "description": "A React component for building D3 Chord Diagrams",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
