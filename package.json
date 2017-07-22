@@ -39,7 +39,11 @@
   "author": "Grayson Langford",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository" :
+    {
+      "type" : "git",
+      "url" : "https://github.com/graysoncl/react-chord-diagram"
+    },
   "keywords": [
     "react",
     "chord-diagram",
