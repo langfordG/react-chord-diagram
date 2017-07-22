@@ -36,12 +36,6 @@ const Groups = ({
                 >
                     {groupLabels[groupIndex]}
                 </text>
-
-                {/*<text x="6" dy="15" fill={labelColors.length === 1 ? labelColors[0] : labelColors[groupIndex]}>
-                 <textPath href={`#component${componentId}-group${groupIndex}`}>
-                 {groupLabels[groupIndex]}
-                 </textPath>
-                 </text>*/}
             </g>
         ))}
     </g>
