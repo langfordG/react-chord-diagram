@@ -36,7 +36,7 @@ const matrix = [
   groupColors={["#000000", "#FFDD89", "#957244", "#F26223"]}
 />
 ```
-![screenshot](/screenshot.png?raw=true "Circos Table Viewer")
+![screenshot](https://image.ibb.co/hH5Kpk/screenshot.png "Circos Table Viewer")
 
 ## Required Props
 
