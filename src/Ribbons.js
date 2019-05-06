@@ -8,7 +8,8 @@ const Ribbons = ({
     chords,
     color,
     ribbon,
-    mouseOverGroup
+    mouseOverGroup,
+    strokeWidth
 }) => (
     <g
         className="ribbons"
@@ -20,6 +21,7 @@ const Ribbons = ({
                 style={{display: `${isHiddenRibbon(mouseOverGroup, chord.source.index, chord.target.index) ? 'none': 'block'}`}}
                 fill={color(chord.target.index)}
                 stroke={`${rgb(color(chord.target.index)).darker()}`}
+                strokeWidth={strokeWidth}
                 d={`${ribbon({source: chord.source, target: chord.target})}`}
             />
         ))}
@@ -31,6 +33,7 @@ Ribbons.propTypes = {
     color: PropTypes.func.isRequired,
     ribbon: PropTypes.func.isRequired,
     mouseOverGroup: PropTypes.number,
+    strokeWidth: PropTypes.number,
 };
 
 export default Ribbons;
