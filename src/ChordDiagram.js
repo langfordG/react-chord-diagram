@@ -28,6 +28,7 @@ export default class ChordDiagram extends Component {
         sortChords: PropTypes.func,
         labelColors: PropTypes.array,
         disableHover: PropTypes.bool,
+        strokeWidth: PropTypes.number,
     };
 
     static defaultProps = {
@@ -47,6 +48,7 @@ export default class ChordDiagram extends Component {
         sortChords: null,
         labelColors: ['#000000'],
         disableHover: false,
+        strokeWidth: 1,
     };
 
     constructor (props) {
@@ -66,7 +68,6 @@ export default class ChordDiagram extends Component {
     }
 
     render() {
-
         const {
             matrix,
             componentId,
@@ -82,6 +83,7 @@ export default class ChordDiagram extends Component {
             sortChords,
             labelColors,
             disableHover,
+            strokeWidth,
         } = this.props;
 
         const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -124,12 +126,12 @@ export default class ChordDiagram extends Component {
                     labelColors={labelColors}
                     disableHover={disableHover}
                 />
-
                 <Ribbons
                     chords={chords}
                     color={color}
                     ribbon={d3Ribbon}
                     mouseOverGroup={this.state.mouseOverGroup}
+                    strokeWidth={strokeWidth}
                 />
             </Svg>
         );
