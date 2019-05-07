@@ -79,7 +79,7 @@ Height of the diagram.
 
 - type: `object`
 
-Custom styles applied to the root of diagram.
+Custom styles applied to the root svg.
 
 example: 
 
@@ -91,7 +91,7 @@ example:
 
 - type: `string`
 
-Custom class name applied to the root of the diagram.
+Custom class name applied to the root svg.
 
 ### outerRadius
 

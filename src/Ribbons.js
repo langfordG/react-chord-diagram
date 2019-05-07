@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { rgb } from 'd3-color';
 
-import { isHiddenRibbon } from './utils/utils';
+import { isHiddenRibbon } from './utils';
 
 const Ribbons = ({
     chords,

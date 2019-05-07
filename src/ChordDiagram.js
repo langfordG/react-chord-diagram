@@ -10,7 +10,6 @@ import Groups from './Groups';
 import Ribbons from './Ribbons';
 
 export default class ChordDiagram extends Component {
-
     static propTypes = {
         matrix: PropTypes.array.isRequired,
         componentId: PropTypes.number.isRequired,
@@ -52,7 +51,6 @@ export default class ChordDiagram extends Component {
     };
 
     constructor (props) {
-
         super(props);
 
         this.setMouseOverGroup = this.setMouseOverGroup.bind(this);
@@ -63,7 +61,6 @@ export default class ChordDiagram extends Component {
     };
 
     setMouseOverGroup (mouseOverGroup) {
-
         this.setState({mouseOverGroup});
     }
 
