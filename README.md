@@ -172,6 +172,14 @@ Will change the stroke width of the ribbons.
 
 default: 1
 
+### resizeWithWindow
+
+- type: `boolean`
+
+Resize the svg when the window is resized.
+
+default: false
+
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
 
