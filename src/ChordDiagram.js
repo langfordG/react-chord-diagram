@@ -9,6 +9,8 @@ import Svg from './Svg';
 import Groups from './Groups';
 import Ribbons from './Ribbons';
 
+import './main.css'
+
 export default class ChordDiagram extends Component {
     static propTypes = {
         matrix: PropTypes.array.isRequired,

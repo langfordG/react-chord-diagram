@@ -8,11 +8,18 @@ const Svg = ({
     className,
     children
 }) => (
-    <svg width={width} height={height} style={style} className={className}>
-        <g transform={`translate(${width / 2},${height / 2})`}>
-            { children }
-        </g>
-    </svg>
+    <div className="svg-container">
+        <svg
+            style={style}
+            className={`svg-content ${className}`}
+            viewBox={`-${width / 2} -${height / 2} ${width} ${height}`}
+            preserveAspectRatio={"xMidYMid meet"}
+        >
+            <g>
+                { children }
+            </g>
+        </svg>
+    </div>
 );
 
 Svg.propTypes = {
