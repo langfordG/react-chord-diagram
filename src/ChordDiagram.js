@@ -30,6 +30,7 @@ export default class ChordDiagram extends Component {
         labelColors: PropTypes.array,
         disableHover: PropTypes.bool,
         strokeWidth: PropTypes.number,
+        resizeWithWindow: PropTypes.bool
     };
 
     static defaultProps = {
@@ -50,6 +51,7 @@ export default class ChordDiagram extends Component {
         labelColors: ['#000000'],
         disableHover: false,
         strokeWidth: 1,
+        resizeWithWindow: false
     };
 
     constructor (props) {
@@ -83,6 +85,7 @@ export default class ChordDiagram extends Component {
             labelColors,
             disableHover,
             strokeWidth,
+            resizeWithWindow
         } = this.props;
 
         const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -113,6 +116,7 @@ export default class ChordDiagram extends Component {
                 height={height}
                 style={style}
                 className={className}
+                resizeWithWindow={resizeWithWindow}
             >
                 <Groups
                     componentId={componentId}
@@ -125,6 +129,7 @@ export default class ChordDiagram extends Component {
                     labelColors={labelColors}
                     disableHover={disableHover}
                 />
+
                 <Ribbons
                     chords={chords}
                     color={color}

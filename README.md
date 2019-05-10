@@ -79,7 +79,7 @@ Height of the diagram.
 
 - type: `object`
 
-Custom styles applied to the root svg.
+Custom styles applied to the diagram's root div.
 
 example: 
 

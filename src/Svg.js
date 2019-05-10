@@ -6,11 +6,11 @@ const Svg = ({
     height,
     style,
     className,
-    children
+    children,
+    resizeWithWindow
 }) => (
-    <div className="svg-container">
+    <div className="svg-container" style={{...style, ...(!resizeWithWindow ? {width: `${width}px`, height: `${height}px`} : {})}}>
         <svg
-            style={style}
             className={`svg-content ${className}`}
             viewBox={`-${width / 2} -${height / 2} ${width} ${height}`}
             preserveAspectRatio={"xMidYMid meet"}
@@ -26,7 +26,8 @@ Svg.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
     style: PropTypes.object,
-    children: PropTypes.arrayOf(PropTypes.node)
+    children: PropTypes.arrayOf(PropTypes.node),
+    resizeWithWindow: PropTypes.bool
 };
 
 export default Svg;

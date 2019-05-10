@@ -15,8 +15,6 @@ class Demo extends Component {
     return <ChordDiagram
         matrix={matrix}
         componentId={1}
-        width={700}
-        height={700}
         style={{fontFamily: 'sans-serif'}}
         groupLabels={['black', 'yellow', 'brown', 'orange']}
         groupColors={['black', 'yellow', 'brown', 'orange']}
