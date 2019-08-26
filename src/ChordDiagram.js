@@ -30,7 +30,8 @@ export default class ChordDiagram extends Component {
         labelColors: PropTypes.array,
         disableHover: PropTypes.bool,
         strokeWidth: PropTypes.number,
-        resizeWithWindow: PropTypes.bool
+        resizeWithWindow: PropTypes.bool,
+        groupOnClick: PropTypes.func,
     };
 
     static defaultProps = {
@@ -44,6 +45,7 @@ export default class ChordDiagram extends Component {
         innerRadius: null,
         groupLabels: [],
         groupColors: [],
+        groupOnClick: null,
         padAngle: 0.05,
         sortGroups: null,
         sortSubgroups: descending,
@@ -51,7 +53,7 @@ export default class ChordDiagram extends Component {
         labelColors: ['#000000'],
         disableHover: false,
         strokeWidth: 1,
-        resizeWithWindow: false
+        resizeWithWindow: false,
     };
 
     constructor (props) {
@@ -78,6 +80,7 @@ export default class ChordDiagram extends Component {
             className,
             groupLabels,
             groupColors,
+            groupOnClick,
             padAngle,
             sortGroups,
             sortSubgroups,
@@ -85,7 +88,7 @@ export default class ChordDiagram extends Component {
             labelColors,
             disableHover,
             strokeWidth,
-            resizeWithWindow
+            resizeWithWindow,
         } = this.props;
 
         const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -128,6 +131,7 @@ export default class ChordDiagram extends Component {
                     groupLabels={groupLabels}
                     labelColors={labelColors}
                     disableHover={disableHover}
+                    onClick={groupOnClick}
                 />
 
                 <Ribbons
