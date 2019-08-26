@@ -180,6 +180,24 @@ Resize the svg when the window is resized.
 
 default: false
 
+### groupOnClick
+
+- type: `function`
+
+A function that will happen when a group is clicked. Group index is passed to
+the function.
+
+default: null
+
+### ribbonOnClick
+
+- type: `function`
+
+A function that will happen when a ribbon is clicked. Ribbon index is passed
+to the function.
+
+default: null
+
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
 

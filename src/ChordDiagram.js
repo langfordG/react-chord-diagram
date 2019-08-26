@@ -32,6 +32,7 @@ export default class ChordDiagram extends Component {
         strokeWidth: PropTypes.number,
         resizeWithWindow: PropTypes.bool,
         groupOnClick: PropTypes.func,
+        ribbonOnClick: PropTypes.func,
     };
 
     static defaultProps = {
@@ -54,6 +55,7 @@ export default class ChordDiagram extends Component {
         disableHover: false,
         strokeWidth: 1,
         resizeWithWindow: false,
+        ribbonOnClick: null,
     };
 
     constructor (props) {
@@ -89,6 +91,7 @@ export default class ChordDiagram extends Component {
             disableHover,
             strokeWidth,
             resizeWithWindow,
+            ribbonOnClick,
         } = this.props;
 
         const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -140,6 +143,7 @@ export default class ChordDiagram extends Component {
                     ribbon={d3Ribbon}
                     mouseOverGroup={this.state.mouseOverGroup}
                     strokeWidth={strokeWidth}
+                    onClick={ribbonOnClick}
                 />
             </Svg>
         );

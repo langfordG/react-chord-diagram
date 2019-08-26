@@ -9,6 +9,7 @@ const Ribbons = ({
     color,
     ribbon,
     mouseOverGroup,
+    onClick,
     strokeWidth
 }) => (
     <g
@@ -23,6 +24,7 @@ const Ribbons = ({
                 stroke={`${rgb(color(chord.target.index)).darker()}`}
                 strokeWidth={strokeWidth}
                 d={`${ribbon({source: chord.source, target: chord.target})}`}
+                onClick={() => onClick(chordIndex) }
             />
         ))}
     </g>
@@ -33,6 +35,7 @@ Ribbons.propTypes = {
     color: PropTypes.func.isRequired,
     ribbon: PropTypes.func.isRequired,
     mouseOverGroup: PropTypes.number,
+    onClick: PropTypes.func,
     strokeWidth: PropTypes.number,
 };
 
