@@ -18,6 +18,8 @@ class Demo extends Component {
         style={{fontFamily: 'sans-serif'}}
         groupLabels={['black', 'yellow', 'brown', 'orange']}
         groupColors={['black', 'yellow', 'brown', 'orange']}
+        groupOnClick={(idx) => alert('Clicked group: ' + idx)}
+        ribbonOnClick={(idx) => alert('Clicked ribbon: ' + idx)}
     />
   }
 }
