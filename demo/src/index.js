@@ -33,13 +33,12 @@ class Demo extends Component {
           style={{fontFamily: 'sans-serif'}}
           groupLabels={['black', 'yellow', 'brown', 'orange']}
           groupColors={['black', 'yellow', 'brown', 'orange']}
-          groupOnClick={(idx) => alert('Clicked group: ' + idx)}
-          ribbonOnClick={(idx) => alert('Clicked ribbon: ' + idx)}
           disableRibbonHover={false}
           blurOnHover={true}
           ribbonOpacity={'0.8'}
           ribbonBlurOpacity={'0.2'}
           strokeWidth={0}
+          persistHoverOnClick={true}
         />
       </div>
     )

@@ -189,6 +189,14 @@ Whether to blur other ribbons instead of hiding them on hover.
 
 default: false
 
+### persistHoverOnClick
+
+- type: `boolean`
+
+If true, ribbons highlighted on hover will remain highlighted if you click on
+the element causing the hover. Click anywhere on the SVG to clear this state.
+
+default: false
 
 ### ribbonOpacity
 

@@ -12,6 +12,8 @@ const Ribbons = ({
     setMouseOverRibbon,
     mouseOverGroup,
     mouseOverRibbon,
+    hoverPersist,
+    setHoverPersist,
     onClick,
     strokeWidth,
     blurOnHover,
@@ -39,9 +41,9 @@ const Ribbons = ({
                 stroke={`${rgb(color(chord.target.index)).darker()}`}
                 strokeWidth={strokeWidth}
                 d={`${ribbon({source: chord.source, target: chord.target})}`}
-                onClick={() => onClick(chordIndex) }
-                onMouseOver={!disableHover ? () => setMouseOverRibbon(chordIndex) : null}
-                onMouseOut={!disableHover ? () => setMouseOverRibbon(null) : null}
+                onClick={() => { setHoverPersist(!hoverPersist); onClick(chordIndex) } }
+                onMouseOver={(!disableHover && !hoverPersist) ? () => setMouseOverRibbon(chordIndex) : null}
+                onMouseOut={(!disableHover && !hoverPersist) ? () => setMouseOverRibbon(null) : null}
             />
           )
         })}
