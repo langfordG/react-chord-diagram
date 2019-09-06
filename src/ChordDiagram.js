@@ -29,10 +29,15 @@ export default class ChordDiagram extends Component {
         sortChords: PropTypes.func,
         labelColors: PropTypes.array,
         disableHover: PropTypes.bool,
+        disableGroupHover: PropTypes.bool,
+        disableRibbonHover: PropTypes.bool,
         strokeWidth: PropTypes.number,
         resizeWithWindow: PropTypes.bool,
         groupOnClick: PropTypes.func,
         ribbonOnClick: PropTypes.func,
+        blurOnHover: PropTypes.bool,
+        ribbonOpacity: PropTypes.string,
+        ribbonHoverOpacity: PropTypes.string,
     };
 
     static defaultProps = {
@@ -53,23 +58,34 @@ export default class ChordDiagram extends Component {
         sortChords: null,
         labelColors: ['#000000'],
         disableHover: false,
+        disableGroupHover: false,
+        disableRibbonHover: true,
         strokeWidth: 1,
         resizeWithWindow: false,
         ribbonOnClick: null,
+        blurOnHover: false,
+        ribbonOpacity: '0.67',
+        ribbonHoverOpacity: '0.2',
     };
 
     constructor (props) {
         super(props);
 
         this.setMouseOverGroup = this.setMouseOverGroup.bind(this);
+        this.setMouseOverRibbon = this.setMouseOverRibbon.bind(this);
     }
 
     state = {
-        mouseOverGroup: null
+        mouseOverGroup: null,
+        mouseOverRibbon: null,
     };
 
     setMouseOverGroup (mouseOverGroup) {
         this.setState({mouseOverGroup});
+    }
+
+    setMouseOverRibbon (mouseOverRibbon) {
+        this.setState({mouseOverRibbon});
     }
 
     render() {
@@ -89,9 +105,14 @@ export default class ChordDiagram extends Component {
             sortChords,
             labelColors,
             disableHover,
+            disableGroupHover,
+            disableRibbonHover,
             strokeWidth,
             resizeWithWindow,
             ribbonOnClick,
+            blurOnHover,
+            ribbonOpacity,
+            ribbonBlurOpacity,
         } = this.props;
 
         const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -133,17 +154,23 @@ export default class ChordDiagram extends Component {
                     setMouseOverGroup={this.setMouseOverGroup}
                     groupLabels={groupLabels}
                     labelColors={labelColors}
-                    disableHover={disableHover}
+                    disableHover={disableHover || disableGroupHover}
                     onClick={groupOnClick}
                 />
 
                 <Ribbons
                     chords={chords}
                     color={color}
+                    disableHover={disableHover || disableRibbonHover}
                     ribbon={d3Ribbon}
+                    setMouseOverRibbon={this.setMouseOverRibbon}
                     mouseOverGroup={this.state.mouseOverGroup}
+                    mouseOverRibbon={this.state.mouseOverRibbon}
                     strokeWidth={strokeWidth}
                     onClick={ribbonOnClick}
+                    blurOnHover={blurOnHover}
+                    ribbonOpacity={ribbonOpacity}
+                    ribbonBlurOpacity={ribbonBlurOpacity}
                 />
             </Svg>
         );
