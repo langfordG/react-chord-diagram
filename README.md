@@ -160,9 +160,60 @@ default: #000000
 
 - type: `boolean`
 
+Whether to hide other ribbons while mousing over a particular group or ribbon.
+This overrides the individual group / ribbon hover settings.
+
+default: false
+
+### disableGroupHover
+
+- type: `boolean`
+
 Whether to hide other ribbons while mousing over a particular group.
 
 default: false
+
+### disableRibbonHover
+
+- type: `boolean`
+
+Whether to hide other ribbons while mousing over a particular ribbon.
+
+default: false
+
+### blurOnHover
+
+- type: `boolean`
+
+Whether to blur other ribbons instead of hiding them on hover.
+
+default: false
+
+### persistHoverOnClick
+
+- type: `boolean`
+
+If true, ribbons highlighted on hover will remain highlighted if you click on
+the element causing the hover. Click anywhere on the SVG to clear this state.
+
+default: false
+
+### ribbonOpacity
+
+- type: `string`
+
+Default opacity value for ribbons.
+
+default: '0.67'
+
+### ribbonBlurOpacity
+
+- type: `string`
+
+If `blurOnHover` is true, then set 'hidden' ribbons to this opacity instead of
+hiding them.
+
+default: '0.2'
 
 ### strokeWidth
 

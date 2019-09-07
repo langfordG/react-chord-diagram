@@ -12,15 +12,36 @@ const matrix = [
 
 class Demo extends Component {
   render() {
-    return <ChordDiagram
-        matrix={matrix}
-        componentId={1}
-        style={{fontFamily: 'sans-serif'}}
-        groupLabels={['black', 'yellow', 'brown', 'orange']}
-        groupColors={['black', 'yellow', 'brown', 'orange']}
-        groupOnClick={(idx) => alert('Clicked group: ' + idx)}
-        ribbonOnClick={(idx) => alert('Clicked ribbon: ' + idx)}
-    />
+    return (
+      <div style={{display: 'flex'}}>
+        <ChordDiagram
+          matrix={matrix}
+          componentId={1}
+          style={{fontFamily: 'sans-serif'}}
+          groupLabels={['black', 'yellow', 'brown', 'orange']}
+          groupColors={['black', 'yellow', 'brown', 'orange']}
+          groupOnClick={(idx) => alert('Clicked group: ' + idx)}
+          ribbonOnClick={(idx) => alert('Clicked ribbon: ' + idx)}
+          height={600}
+          width={600}
+        />
+        <ChordDiagram
+          height={600}
+          width={600}
+          matrix={matrix}
+          componentId={2}
+          style={{fontFamily: 'sans-serif'}}
+          groupLabels={['black', 'yellow', 'brown', 'orange']}
+          groupColors={['black', 'yellow', 'brown', 'orange']}
+          disableRibbonHover={false}
+          blurOnHover={true}
+          ribbonOpacity={'0.8'}
+          ribbonBlurOpacity={'0.2'}
+          strokeWidth={0}
+          persistHoverOnClick={true}
+        />
+      </div>
+    )
   }
 }
 

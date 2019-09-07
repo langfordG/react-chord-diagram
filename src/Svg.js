@@ -6,6 +6,7 @@ const Svg = ({
     height,
     style,
     className,
+    clearHover,
     children,
     resizeWithWindow
 }) => (
@@ -16,6 +17,14 @@ const Svg = ({
             preserveAspectRatio={"xMidYMid meet"}
         >
             <g>
+              <rect
+                fillOpacity={0}
+                height={height}
+                onClick={ () => clearHover() }
+                width={width}
+                x={`-${width / 2}`}
+                y={`-${height / 2}`}
+              />
                 { children }
             </g>
         </svg>

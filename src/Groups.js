@@ -14,15 +14,17 @@ const Groups = ({
     groupLabels,
     labelColors,
     disableHover,
+    hoverPersist,
+    setHoverPersist,
     onClick,
 }) => (
     <g className="groups">
         {chords.groups.map((group, groupIndex) => (
             <g
                 key={groupIndex}
-                onMouseOver={!disableHover ? () => setMouseOverGroup(group.index) : null}
-                onMouseOut={!disableHover ? () => setMouseOverGroup(null) : null}
-                onClick={ () => onClick(group.index) }
+                onMouseOver={(!disableHover && !hoverPersist) ? () => setMouseOverGroup(group.index) : null}
+                onMouseOut={(!disableHover && !hoverPersist) ? () => setMouseOverGroup(null) : null}
+                onClick={ () => { setHoverPersist(!hoverPersist); onClick(group.index) } }
             >
                 <path
                     id={`component${componentId}-group${groupIndex}`}
@@ -52,6 +54,7 @@ Groups.propTypes = {
     groupLabels: PropTypes.array,
     labelColors: PropTypes.array,
     disableHover: PropTypes.bool,
+    persistHoverOnClick: PropTypes.bool,
     onClick: PropTypes.func,
 };
 
