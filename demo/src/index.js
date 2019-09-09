@@ -11,6 +11,21 @@ const matrix = [
 ];
 
 class Demo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.svgClicked = this.svgClicked.bind(this);
+  }
+
+  /* Sample of getting X/Y from the svg */
+  svgClicked(evt) {
+    const e = evt.target;
+    const dim = e.getBoundingClientRect();
+    const x = evt.clientX - dim.left;
+    const y = evt.clientY - dim.top;
+    alert("x: "+x+" y:"+y);
+  }
+
   render() {
     return (
       <div style={{display: 'flex'}}>
@@ -39,6 +54,7 @@ class Demo extends Component {
           ribbonBlurOpacity={'0.2'}
           strokeWidth={0}
           persistHoverOnClick={true}
+          svgOnClick={this.svgClicked}
         />
       </div>
     )

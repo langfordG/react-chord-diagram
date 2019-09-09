@@ -35,6 +35,7 @@ export default class ChordDiagram extends Component {
         resizeWithWindow: PropTypes.bool,
         groupOnClick: PropTypes.func,
         ribbonOnClick: PropTypes.func,
+        svgOnClick: PropTypes.func,
         blurOnHover: PropTypes.bool,
         ribbonOpacity: PropTypes.string,
         ribbonHoverOpacity: PropTypes.string,
@@ -68,6 +69,7 @@ export default class ChordDiagram extends Component {
         ribbonOpacity: '0.67',
         ribbonHoverOpacity: '0.2',
         persistHoverOnClick: false,
+        svgOnClick: null,
     };
 
     constructor (props) {
@@ -129,6 +131,7 @@ export default class ChordDiagram extends Component {
             ribbonOpacity,
             ribbonBlurOpacity,
             persistHoverOnClick,
+            svgOnClick,
         } = this.props;
 
         const outerRadius = this.props.outerRadius || Math.min(width, height) * 0.5 - 40;
@@ -161,6 +164,7 @@ export default class ChordDiagram extends Component {
                 className={className}
                 clearHover={this.clearHover}
                 resizeWithWindow={resizeWithWindow}
+                onClick={svgOnClick}
             >
                 <Groups
                     componentId={componentId}
