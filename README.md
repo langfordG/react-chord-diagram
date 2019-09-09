@@ -249,6 +249,15 @@ to the function.
 
 default: null
 
+### svgOnClick
+
+- type: `function`
+
+A function that will happen when the background SVG is clicked. The `event` is passed
+to the function.
+
+default: null
+
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
 
