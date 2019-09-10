@@ -8,7 +8,8 @@ const Svg = ({
     className,
     clearHover,
     children,
-    resizeWithWindow
+    resizeWithWindow,
+    onClick,
 }) => (
     <div className="svg-container" style={{...style, ...(!resizeWithWindow ? {width: `${width}px`, height: `${height}px`} : {})}}>
         <svg
@@ -20,7 +21,7 @@ const Svg = ({
               <rect
                 fillOpacity={0}
                 height={height}
-                onClick={ () => clearHover() }
+                onClick={ (event) => { clearHover(); onClick(event) } }
                 width={width}
                 x={`-${width / 2}`}
                 y={`-${height / 2}`}
