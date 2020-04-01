@@ -67,13 +67,13 @@ A unique id for the component.
 
 - type: `number`
 
-Width of the diagram.
+Width of the diagram in pixels.
 
 ### height 
 
 - type: `number`
 
-Height of the diagram.
+Height of the diagram in pixels.
 
 ### style
 
@@ -97,13 +97,13 @@ Custom class name applied to the root svg.
 
 - type: `number`
 
-Outer radius of the diagram.
+Outer radius of the diagram in pixels.
 
 ### innerRadius
 
 - type: `number`
 
-Inner radius of the diagram.
+Inner radius of the diagram in pixels.
 
 ### groupColors
 
