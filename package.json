@@ -1,6 +1,6 @@
 {
   "name": "react-chord-diagram",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "A React component for building D3 Chord Diagrams",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -32,7 +32,7 @@
     "react": "16.x"
   },
   "devDependencies": {
-    "nwb": "^0.24.3",
+    "nwb": "^0.25.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },

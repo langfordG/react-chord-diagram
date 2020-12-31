@@ -54,7 +54,6 @@ class Demo extends Component {
           ribbonBlurOpacity={'0.2'}
           strokeWidth={0}
           persistHoverOnClick={true}
-          svgOnClick={this.svgClicked}
         />
       </div>
     )

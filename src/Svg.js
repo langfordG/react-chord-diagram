@@ -21,7 +21,7 @@ const Svg = ({
               <rect
                 fillOpacity={0}
                 height={height}
-                onClick={ (event) => { clearHover(); onClick(event) } }
+                onClick={ (event) => { clearHover(); onClick && onClick(event) } }
                 width={width}
                 x={`-${width / 2}`}
                 y={`-${height / 2}`}
@@ -37,7 +37,8 @@ Svg.propTypes = {
     height: PropTypes.number,
     style: PropTypes.object,
     children: PropTypes.arrayOf(PropTypes.node),
-    resizeWithWindow: PropTypes.bool
+    resizeWithWindow: PropTypes.bool,
+    onClick: PropTypes.func
 };
 
 export default Svg;

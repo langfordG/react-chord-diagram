@@ -18,13 +18,13 @@ const Groups = ({
     setHoverPersist,
     onClick,
 }) => (
-    <g className="groups">
+    <g className="groups" test={console.log('test')}>
         {chords.groups.map((group, groupIndex) => (
             <g
                 key={groupIndex}
                 onMouseOver={(!disableHover && !hoverPersist) ? () => setMouseOverGroup(group.index) : null}
                 onMouseOut={(!disableHover && !hoverPersist) ? () => setMouseOverGroup(null) : null}
-                onClick={ () => { setHoverPersist(!hoverPersist); onClick(group.index) } }
+                onClick={ () => { setHoverPersist(!hoverPersist); onClick && onClick(group.index) } }
             >
                 <path
                     id={`component${componentId}-group${groupIndex}`}
@@ -55,7 +55,7 @@ Groups.propTypes = {
     labelColors: PropTypes.array,
     disableHover: PropTypes.bool,
     persistHoverOnClick: PropTypes.bool,
-    onClick: PropTypes.func,
+    onClick: PropTypes.func
 };
 
 export default Groups;
