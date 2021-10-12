@@ -18,7 +18,7 @@ const Groups = ({
     setHoverPersist,
     onClick,
 }) => (
-    <g className="groups" test={console.log('test')}>
+    <g className="groups">
         {chords.groups.map((group, groupIndex) => (
             <g
                 key={groupIndex}
