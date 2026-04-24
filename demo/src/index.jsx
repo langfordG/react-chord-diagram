@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {render} from 'react-dom';
+import React, { Component } from 'react';
+import { createRoot } from 'react-dom/client';
 
 import ChordDiagram from '../../src';
 
@@ -31,7 +31,6 @@ class Demo extends Component {
       <div style={{display: 'flex'}}>
         <ChordDiagram
           matrix={matrix}
-          componentId={1}
           style={{fontFamily: 'sans-serif'}}
           groupLabels={['black', 'yellow', 'brown', 'orange']}
           groupColors={['black', 'yellow', 'brown', 'orange']}
@@ -44,7 +43,6 @@ class Demo extends Component {
           height={600}
           width={600}
           matrix={matrix}
-          componentId={2}
           style={{fontFamily: 'sans-serif'}}
           groupLabels={['black', 'yellow', 'brown', 'orange']}
           groupColors={['black', 'yellow', 'brown', 'orange']}
@@ -60,4 +58,5 @@ class Demo extends Component {
   }
 }
 
-render(<Demo/>, document.querySelector('#demo'));
+const root = createRoot(document.querySelector('#demo'));
+root.render(<Demo />);

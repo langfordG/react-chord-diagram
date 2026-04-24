@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { rgb } from 'd3-color';
 
 const getAngle = (group) => ((group.startAngle + group.endAngle) / 2);
 
 const Groups = ({
-    componentId,
     chords,
     color,
     arc,
@@ -27,7 +25,6 @@ const Groups = ({
                 onClick={ () => { setHoverPersist(!hoverPersist); onClick && onClick(group.index) } }
             >
                 <path
-                    id={`component${componentId}-group${groupIndex}`}
                     fill={`${color(groupIndex)}`}
                     stroke={`${rgb(color(groupIndex)).darker()}`} d={arc(group)}
                 />
@@ -46,7 +43,6 @@ const Groups = ({
 );
 
 Groups.propTypes = {
-    componentId: PropTypes.number.isRequired,
     chords: PropTypes.array.isRequired,
     color: PropTypes.func.isRequired,
     arc: PropTypes.func.isRequired,

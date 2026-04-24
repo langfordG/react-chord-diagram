@@ -13,21 +13,23 @@ A React component for building [D3 Chord Diagrams](https://github.com/d3/d3-chor
 
     $ npm install react-chord-diagram
 
+Supports React `^17`, `^18`, and `^19` as peer dependencies.
+
 ## Usage
 
 ```js
-import ChordDiagram from 'react-chord-diagram'
-    
+import ChordDiagram from 'react-chord-diagram';
+import 'react-chord-diagram/style.css';
+
 const matrix = [
   [11975, 5871, 8916, 2868],
   [1951, 10048, 2060, 6171],
   [8010, 16145, 8090, 8045],
   [1013, 990, 940, 6907]
-]; 
+];
 
 <ChordDiagram
   matrix={matrix}
-  componentId={1}
   groupLabels={['Black', 'Yellow', 'Brown', 'Orange']}
   groupColors={["#000000", "#FFDD89", "#957244", "#F26223"]}
 />
@@ -50,12 +52,6 @@ example:
       [ 8010, 16145, 8090, 8045],
       [ 1013,   990,  940, 6907],
     ]
-    
-### componentId
-
-- type: `number`
-
-A unique id for the component.
 
 ## Optional Props
 
